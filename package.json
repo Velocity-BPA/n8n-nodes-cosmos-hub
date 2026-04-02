@@ -1,0 +1,60 @@
+{
+  "name": "@velocity-bpa/n8n-nodes-cosmos-hub",
+  "version": "1.0.0",
+  "description": "n8n community node for Cosmos Hub blockchain operations",
+  "keywords": [
+    "n8n-community-node-package"
+  ],
+  "license": "bsl-catalog",
+  "homepage": "https://n8n.io",
+  "author": {
+    "name": "Velocity BPA",
+    "email": "info@velocitybpa.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/velocity-bpa/n8n-nodes-cosmos-hub.git"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "packageManager": "pnpm@9.1.4",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && gulp build:icons",
+    "dev": "tsc --watch",
+    "format": "prettier nodes credentials --write",
+    "lint": "eslint nodes credentials package.json",
+    "lintfix": "eslint nodes credentials package.json --fix",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/CosmosHubApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/CosmosHub/CosmosHub.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.16",
+    "@typescript-eslint/eslint-plugin": "^7.15.1",
+    "@typescript-eslint/parser": "^7.15.1",
+    "eslint": "^8.56.0",
+    "eslint-plugin-n8n-nodes-base": "^1.16.1",
+    "gulp": "^4.0.2",
+    "n8n-workflow": "*",
+    "prettier": "^3.3.2",
+    "typescript": "^5.5.3"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  },
+  "dependencies": {
+    "axios": "^1.7.0"
+  }
+}
